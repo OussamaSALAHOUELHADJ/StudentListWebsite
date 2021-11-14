@@ -9,7 +9,43 @@
 </head>
 
 <body>
+    <section id="sign-up-form-container">
+        <h1>Log In</h1>
+        <form name="sign-up-form" action="/pages/accueil.html" onsubmit="return false" method="post">
+            <label for="first-name" class="form-label">First Name:</label>
+            <input type="text" min="4" max="20" name="first-name" placeholder="first name">
 
+            <label for="last-name" class="form-label">Last Name:</label>
+            <input type="text" min="4" max="20" name="last-name" placeholder="last name">
+
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender" title="gender"></select>
+
+            <label for="birthday" class="form-label">Birthday:</label>
+            <input type="date" min="4" max="20" name="birthday" placeholder="birthday">
+
+            <label for="adress" class="form-label">Adress:</label>
+            <input type="text" min="4" max="20" name="adress" placeholder="house number, street, city">
+
+            <label for="wilaya">Wilaya:</label>
+            <select name="wilaya" id="wilaya" title="wilaya"></select>
+
+            <label for="email" class="form-label">Email Adress:</label>
+            <input type="email" min="4" max="20" name="email" placeholder="name@company.com">
+
+            <label for="phone" class="form-label">Phone Number:</label>
+            <input type="tel" min="4" max="20" name="phone" placeholder="+213797536314">
+
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" min="4" max="20" name="username" placeholder="username">
+
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" min="8" max="20" name="password" placeholder="password">
+
+            <button type="submit">Register</button>
+        </form>
+        <p>You already have an account? <a href="/index.html">Log In!</a></p>
+    </section>
 </body>
 
 </html>

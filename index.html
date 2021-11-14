@@ -8,7 +8,19 @@
 </head>
 
 <body>
+    <section id="log-in-form-container">
+        <h1>Log In</h1>
+        <form name="log-in-form" action="/pages/accueil.html" onsubmit="return false" method="post">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" min="4" max="20" name="username" placeholder="username">
 
+            <label for="password" class="form-label">Password</label>
+            <input type="password" min="8" max="20" name="password" placeholder="password">
+
+            <button type="submit">Log in</button>
+        </form>
+        <p>You don't have an account? <a href="/pages/creerCompte.html">Register!</a></p>
+    </section>
 </body>
 
 </html>
