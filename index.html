@@ -8,9 +8,10 @@
 </head>
 
 <body>
-    <section id="log-in-form-container">
+    <section id="login-form-container">
         <h1>Log In</h1>
-        <form name="log-in-form" action="/pages/accueil.html" onsubmit="return false" method="post">
+        <form name="login-form" action="/pages/accueil.html" onsubmit="return submitButtonClicked(logInForm)"
+            method="post">
             <label for="username" class="form-label">Username</label>
             <input type="text" min="4" max="20" name="username" placeholder="username">
 
@@ -21,6 +22,10 @@
         </form>
         <p>You don't have an account? <a href="/pages/creerCompte.html">Register!</a></p>
     </section>
+
+    <script type="text/javascript" src="./scripts/logIn.js"></script>
+    <script type="text/javascript" src="./scripts/gen/initInputEventListener.js"></script>
+    <script type="text/javascript" src="./scripts/gen/initInputEventListener.js"></script>
 </body>
 
 </html>
