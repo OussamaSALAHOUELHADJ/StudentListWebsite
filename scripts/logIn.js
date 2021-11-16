@@ -1,10 +1,16 @@
 window.onload = () => {
   initInputEventListener(logInForm, logInForm.logInInputFields);
+  document.forms["login-form"].addEventListener("keypress", function (event) {
+    if (event.key == "Enter") {
+      window.commonFunctions.submitButtonClicked(logInForm);
+    }
+  });
 };
 
 let logInHtmlElem = document.forms["login-form"];
 
 let logInForm = {
+  name: "login-form",
   htmlElement: logInHtmlElem,
   logInInputFields: ["username", "password"],
   username: {
@@ -52,13 +58,13 @@ let logInForm = {
   },
   fireInvalidInputErrorMessage: function (formElement) {
     let errorMessageHtmlElement = document.createElement("p");
-    errorMessageHtmlElement.classList.add("errorMessage");
+    errorMessageHtmlElement.classList.add("invalid-input-error-message");
     errorMessageHtmlElement.innerHTML = formElement.errorMessage;
     formElement.htmlElement.parentNode.insertBefore(
       errorMessageHtmlElement,
       formElement.htmlElement.nextSibling
     );
-    formElement.htmlElement.className += " error";
+    formElement.htmlElement.classList.add("invalid-input-field");
     formElement.errorMessageDisplayed = true;
   },
   removeInvalidInputErrorMessage: function (formElem) {
@@ -66,11 +72,7 @@ let logInForm = {
       formElem.htmlElement.nextSibling
     );
 
-    formElem.htmlElement.classList.remove("wrong");
+    formElem.htmlElement.classList.remove("invalid-input-field");
     formElem.errorMessageDisplayed = false;
   },
 };
-
-function submitButtonClicked(formObj) {
-  return formObj.checkInputValidity();
-}
