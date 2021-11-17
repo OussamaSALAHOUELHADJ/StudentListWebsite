@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <img id="form-profile-image" src="./assets/images/student.png" alt="student">
+    <img id="form-profile-image" src="" alt="student">
     <section id="login-form-container">
         <h1 class="form-title">Log In</h1>
         <form name="login-form" action="/pages/accueil.html" onsubmit="return loginForm.onSubmit()" method="get">
@@ -24,9 +24,22 @@
         <p>You don't have an account? <a href="/pages/creerCompte.html"><strong
                     style="font-weight: 700;">Register</strong></a></p>
     </section>
+
+    <section id="control-icons">
+        <div id="change-gender-style">
+            <img src="" alt="change gender style" onclick="updateGenderStyle(logInForm)">
+            <div class="hover-circle-showoff"></div>
+        </div>
+        <div id="style-mode">
+            <img src="" class="control-image" alt="change gender style" onclick="updateStyleMode(logInForm)">
+            <div class="hover-circle-showoff"></div>
+        </div>
+    </section>
     <script type="text/javascript" src="./scripts/logIn.js"></script>
     <script type="text/javascript" src="./scripts/gen/initInputEventListener.js"></script>
     <script type="text/javascript" src="./scripts/gen/submitButtonClicked.js"></script>
+    <script type="text/javascript" src="./scripts/gen/initPaege.js"></script>
+    <script type="text/javascript" src="./scripts/gen/pageControl.js"></script>
 </body>
 
 </html>

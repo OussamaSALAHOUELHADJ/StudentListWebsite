@@ -1,10 +1,6 @@
 window.onload = () => {
+  initPage(logInForm);
   initInputEventListener(logInForm, logInForm.logInInputFields);
-  document.forms["login-form"].addEventListener("keypress", function (event) {
-    if (event.key == "Enter") {
-      window.commonFunctions.submitButtonClicked(logInForm);
-    }
-  });
 };
 
 let logInHtmlElem = document.forms["login-form"];
@@ -34,6 +30,9 @@ let logInForm = {
     validateValue: function () {
       return this.validationRegex.test(this.value);
     },
+  },
+  gender: {
+    value: "Male",
   },
   checkInputValidity: function () {
     let elementsToCheckValue = this.logInInputFields;

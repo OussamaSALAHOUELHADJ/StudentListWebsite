@@ -1,4 +1,6 @@
 window.onload = async () => {
+  initPage(registerForm);
+
   /* init register form */
   let registerformData = await getRegisterFormData();
   initRegisterForm(registerformData);
@@ -6,15 +8,6 @@ window.onload = async () => {
   setFormValue(registerForm);
 
   initInputEventListener(registerForm, registerForm.InputFields);
-
-  document.forms["register-form"].addEventListener(
-    "keypress",
-    function (event) {
-      if (event.key == "Enter") {
-        window.commonFunctions.submitButtonClicked(registerForm);
-      }
-    }
-  );
 };
 
 async function getRegisterFormData() {
@@ -37,7 +30,11 @@ function initRegisterForm(registerformData) {
 function setFormValue(formObj) {
   for (const formInput of formObj.InputFields) {
     let formInputObj = formObj[formInput];
-    formInputObj.htmlElement.value = formInputObj.value;
+    if (formInput == "gender") {
+      formInputObj.htmlElement.value = window.pageCookie.gender;
+    } else {
+      formInputObj.htmlElement.value = formInputObj.value;
+    }
   }
 }
 

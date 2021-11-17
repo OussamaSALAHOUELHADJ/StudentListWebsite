@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <img id="form-profile-image" src="../assets/images/student.png" alt="student">
+    <img id="form-profile-image" src="" alt="student">
     <section id="register-form-container">
         <h1>Register</h1>
         <form name="register-form" id="register-form" action="./accueil.html" onsubmit="registerForm.onSubmit()"
@@ -54,9 +54,18 @@
         <h2>Account has been created with Success!</h2>
         <p>Congrats! your account has been created, you'll be forwarded to the home page...</p>
     </section>
+    <section id="control-icons">
+        <div id="style-mode">
+            <img src="" class="control-image" alt="change gender style" onclick="updateStyleMode(registerForm)">
+            <div class="hover-circle-showoff"></div>
+        </div>
+    </section>
     <script type="text/javascript" src="../scripts/register.js"></script>
     <script type="text/javascript" src="../scripts/gen/initInputEventListener.js"></script>
     <script type="text/javascript" src="../scripts/gen/submitButtonClicked.js"></script>
+    <script type="text/javascript" src="../scripts/gen/initPaege.js"></script>
+    <script type="text/javascript" src="../scripts/gen/pageControl.js"></script>
+
 
 </body>
 
