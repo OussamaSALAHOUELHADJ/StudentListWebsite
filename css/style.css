@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&family=Roboto+Slab:wght@400;700;800;900&display=swap');
 
+@import url('accueil.css');
+
 :root {
     --font-main: 'Roboto Slab', serif;
     --font-scondary: 'Noto Serif', serif;
@@ -37,7 +39,6 @@
     --main-error-color: #540804;
     --secondary-error-color: #fe5f55;
     --border-radius: 10px;
-    animation: --main-color 1s ease-in-out;
 }
 
 * {
@@ -50,8 +51,7 @@
     font-style: normal;
     text-decoration: none;
     color: var(--main-text-color);
-
-
+    scroll-behavior: smooth;
 }
 
 @media (max-width: 720px) {
@@ -95,6 +95,7 @@ body {
     display: grid;
     justify-content: center;
     align-items: baseline;
+    padding: 0;
 }
 
 body * {
@@ -103,6 +104,30 @@ body * {
     -o-transition: background-color 500ms ease-out;
     -ms-transition: background-color 500ms ease-out;
     transition: background-color 500ms ease-out;
+}
+
+::-webkit-scrollbar {
+    background: transparent;
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(var(--main-color));
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(var(--main-color), .2);
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--third-color);
+    color: var(--main-text-color);
 }
 
 #control-icons {
@@ -191,8 +216,14 @@ h1 {
     font-weight: bolder;
 }
 
+h2 {
+    font-size: 2rem;
+    padding: 8px 0 4px 0;
+    font-family: var(--font-main);
+    font-weight: bolder;
+}
+
 section {
-    width: var(--section-width);
     min-width: 300px;
     height: fit-content;
     padding: var(--vertical-padding) var(--horizontal-padding);
@@ -201,9 +232,9 @@ section {
 
 #login-form-container,
 #register-form-container,
+#add-edit-form-container,
 #account-success-created-message {
-    padding-top: 80px;
-    margin: var(--section-margin-vertical) 0 calc(var(--section-margin-vertical) / 4);
+    width: var(--section-width);
     display: -ms-gri;
     display: grid;
     -ms-grid-columns: 1fr;
@@ -217,6 +248,10 @@ section {
     border-radius: var(--border-radius);
     box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.2);
     z-index: 10;
+}
+
+#register-form-container {
+    margin-top: 50%;
 }
 
 form[name="login-form"],
@@ -276,15 +311,6 @@ form button {
     border-radius: var(--border-radius);
 }
 
-form button:hover,
-form button:active {
-    cursor: pointer;
-    background-color: var(--third-color);
-    color: var(--main-text-color);
-}
-
-
-
 .invalid-input-error-message {
     font-size: 0.8rem;
     font-weight: 700;
@@ -304,13 +330,15 @@ form button:active {
 }
 
 #form-profile-image {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
-    transform: translate(calc(50vw - 100px), calc(var(--section-margin-vertical) - 115px));
-    width: 200px;
+    display: block;
+    max-width: 200px;
+    max-height: auto;
+    width: auto;
+    height: 200px;
+    margin: -150px auto 0 auto;
+    position: relative;
     z-index: 15;
+    object-fit: contain;
 }
 
 #account-success-created-message {

@@ -5,11 +5,121 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css" />
+
     <title>Accueil</title>
 </head>
 
 <body>
+    <section id="accueil-forground">
+        <nav class="top-navbar">
+            <div class="account-info">
+                <p>Welcome Back <span class="userinfo">Oussama Salah</span>!</p>
+            </div>
+        </nav>
+        <nav class="side-navbar" id="menu">
+            <h2 class="menu-title">Menu</h2>
+            <button class="btn" type="button" onclick="show_add()">
+                <img src="/assets/images/add-icon.png" alt="Add a user">
+                <div class="menu-text-action">Add a user</div>
+            </button>
+            <button class="btn" type="button" onclick="show_edit()">
+                <img src="/assets/images/edit-icon.png" alt="Edit a user">
+                <div class="menu-text-action">Edit a user</div>
+            </button>
+            <button class="btn" type="button" onclick="show_delet()">
+                <img src="/assets/images/delete-icon.png" alt="Delete a user">
+                <div class="menu-text-action">Delete a user</div>
+            </button>
+        </nav>
+        <section id="users-list-container">
+            <table id="users-list" class="content-table" class=".fixed-scrollbar" data-simplebar>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>nom</th>
+                        <th>prenom</th>
+                        <th>gender</th>
+                        <th>birthday</th>
+                        <th>adress</th>
+                        <th>wilaya</th>
+                        <th>email</th>
+                        <th>phone</th>
+                        <th>username</th>
+                        <th>password</th>
 
+                        <th class="edt_btn">Edit</th>
+                        <th class="del_btn">delete</th>
+                    </tr>
+                </thead>
+                <tbody id="users-list-body">
+                <tbody>
+            </table>
+        </section>
+        <section id="add-edit-section">
+            <div>
+                <section id="add-edit-form-container">
+                    <img id="form-profile-image" src="" alt="student">
+                    <h1 id="add/edit">Add user</h1>
+                    <form name="register-form" id="register-form" action="./accueil.html"
+                        onsubmit="registerForm.onSubmit()" method="get">
+
+                        <label for="first-name" class="form-label" id="first-name">First Name:</label>
+                        <input type="text" min="1" max="15" name="first-name" placeholder="first name">
+
+                        <label for="last-name" class="form-label">Last Name:</label>
+                        <input type="text" min="1" max="15" name="last-name" placeholder="last name">
+
+                        <label for="gender">Gender:</label>
+                        <select name="gender" id="gender" title="gender">
+                        </select>
+
+                        <label for="birthday" class="form-label">Birthday:</label>
+                        <input type="date" min="4" max="20" name="birthday" placeholder="birthday">
+
+                        <label for="adress" class="form-label">Adress:</label>
+                        <input type="text" min="4" max="20" name="adress" placeholder="house number, street, city">
+
+                        <label for="wilaya">Wilaya:</label>
+                        <select name="wilaya" id="wilaya" title="wilaya"></select>
+
+                        <label for="email" class="form-label">Email Adress:</label>
+                        <input type="email" min="4" max="20" name="email" placeholder="name@company.com">
+
+                        <label for="phone" class="form-label">Phone Number:</label>
+                        <input type="tel" min="4" max="20" name="phone" placeholder="+213797536314">
+
+                        <label for="username" class="form-label">Username:</label>
+                        <input type="text" min="4" max="20" name="username" placeholder="username">
+
+                        <label for="password" class="form-label">Password:</label>
+                        <input type="password" min="8" max="20" name="password" placeholder="password">
+
+                        <button type="button" id="add/edit_btn" onclick="added_user()">Add</button>
+                        <button type="button" id="/edit_btn" onclick="edited_user()">Edit</button>
+
+                    </form>
+                </section>
+                <section id="account-success-created-message">
+                    <h2>user has been created with Success!</h2>
+                </section>
+            </div>
+        </section>
+    </section>
+
+
+    <section id="control-icons">
+        <div id="style-mode">
+            <img src="" class="control-image" alt="change gender style" onclick="updateStyleMode(registerForm)">
+            <div class="hover-circle-showoff"></div>
+        </div>
+    </section>
+    <script type="text/javascript" src="../scripts/register.js"></script>
+    <script type="text/javascript" src="../scripts/gen/initInputEventListener.js"></script>
+    <script type="text/javascript" src="../scripts/gen/submitButtonClicked.js"></script>
+    <script type="text/javascript" src="../scripts/gen/initPaege.js"></script>
+    <script type="text/javascript" src="../scripts/gen/pageControl.js"></script>
+    <script src="../scripts/accueil.js"></script>
 </body>
 
 </html>

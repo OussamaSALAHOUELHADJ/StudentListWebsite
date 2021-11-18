@@ -25,6 +25,7 @@ function getCookie(key) {
 function updatePage(formObject) {
   let gender = window.pageCookie.gender;
   let styleMode = window.pageCookie.styleMode;
+  console.log(window.pageCookie);
   console.log(formObject.password.value);
   let passwordInput = formObject.password.value == "" ? "" : "_ce";
 
@@ -69,9 +70,11 @@ function updatePage(formObject) {
   };
 
   for (const pageObject in pageObjects) {
-    let pageObjectElem = pageObjects[pageObject];
-    if (pageObjectElem.htmlElem) {
-      pageObjectElem.htmlElem.src = pageObjectElem.src;
+    if (pageObjects[pageObject]) {
+      let pageObjectElem = pageObjects[pageObject];
+      if (pageObjectElem.htmlElem) {
+        pageObjectElem.htmlElem.src = pageObjectElem.src;
+      }
     }
   }
 
