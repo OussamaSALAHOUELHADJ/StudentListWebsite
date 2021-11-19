@@ -14,26 +14,26 @@
     <section id="accueil-forground">
         <nav class="top-navbar">
             <div class="account-info">
-                <p>Welcome Back <span class="userinfo">Oussama Salah</span>!</p>
+                <p>Welcome Back <span class="user-info"></span></p>
             </div>
         </nav>
         <nav class="side-navbar" id="menu">
             <h2 class="menu-title">Menu</h2>
             <button class="btn" type="button" onclick="show_add()">
-                <img src="/assets/images/add-icon.png" alt="Add a user">
+                <img src="../assets/images/add-icon.png" alt="Add a user">
                 <div class="menu-text-action">Add a user</div>
             </button>
             <button class="btn" type="button" onclick="show_edit()">
-                <img src="/assets/images/edit-icon.png" alt="Edit a user">
+                <img src="../assets/images/edit-icon.png" alt="Edit a user">
                 <div class="menu-text-action">Edit a user</div>
             </button>
             <button class="btn" type="button" onclick="show_delet()">
-                <img src="/assets/images/delete-icon.png" alt="Delete a user">
+                <img src="../assets/images/delete-icon.png" alt="Delete a user">
                 <div class="menu-text-action">Delete a user</div>
             </button>
         </nav>
         <section id="users-list-container">
-            <table id="users-list" class="content-table" class=".fixed-scrollbar" data-simplebar>
+            <table id="users-list" class="content-table" data-simplebar>
                 <thead>
                     <tr>
                         <th>#</th>
@@ -47,7 +47,6 @@
                         <th>phone</th>
                         <th>username</th>
                         <th>password</th>
-
                         <th class="edt_btn">Edit</th>
                         <th class="del_btn">delete</th>
                     </tr>
@@ -61,8 +60,7 @@
                 <section id="add-edit-form-container">
                     <img id="form-profile-image" src="" alt="student">
                     <h1 id="add/edit">Add user</h1>
-                    <form name="register-form" id="register-form" action="./accueil.html"
-                        onsubmit="registerForm.onSubmit()" method="get">
+                    <form name="register-form" id="register-form" onsubmit="registerForm.onSubmit()" method="get">
 
                         <label for="first-name" class="form-label" id="first-name">First Name:</label>
                         <input type="text" min="1" max="15" name="first-name" placeholder="first name">
@@ -95,13 +93,14 @@
                         <label for="password" class="form-label">Password:</label>
                         <input type="password" min="8" max="20" name="password" placeholder="password">
 
-                        <button type="button" id="add/edit_btn" onclick="added_user()">Add</button>
-                        <button type="button" id="/edit_btn" onclick="edited_user()">Edit</button>
-
+                        <button type="button" id="add/edit_btn"
+                            onclick="window.commonFunctions.check_and_add_edit(registerForm,'add')">Add</button>
+                        <button type="button" id="/edit_btn"
+                            onclick="window.commonFunctions.check_and_add_edit(registerForm,'edit')">Edit</button>
+                        <button type="button" id="cancel" onclick="cancel_form()">Cancel</button>
                     </form>
                 </section>
                 <section id="account-success-created-message">
-                    <h2>user has been created with Success!</h2>
                 </section>
             </div>
         </section>
@@ -119,7 +118,7 @@
     <script type="text/javascript" src="../scripts/gen/submitButtonClicked.js"></script>
     <script type="text/javascript" src="../scripts/gen/initPaege.js"></script>
     <script type="text/javascript" src="../scripts/gen/pageControl.js"></script>
-    <script src="../scripts/accueil.js"></script>
+    <script type="text/javascript" src="../scripts/accueil.js"></script>
 </body>
 
 </html>

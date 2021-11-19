@@ -18,9 +18,13 @@
     /* #470204 */
     --secondary-light-Female-color: #e68eca;
     --third-light-Female-color: #fae8f4;
-    --main-green-color: 48, 71, 2;
-    --secondary-green-color: #cae68e;
-    --third-green-color: #f4fae8;
+    --main-light-green-color: 48, 71, 2;
+    /* #304702 */
+    --secondary-light-green-color: #cae68e;
+    --third-light-green-color: #f4fae8;
+    --main-dark-green-color: 244, 250, 232;
+    --secondary-dark-green-color: #304702;
+    --third-dark-green-color: #cae68e;
     --main-dark-Male-color: 10, 147, 150;
     /* #0A9396 */
     --secondary-dark-Male-color: #005F73;
@@ -32,12 +36,19 @@
     --main-color: var(--main-light-Male-color);
     --secondary-color: var(--secondary-light-Male-color);
     --third-color: var(--third-light-Male-color);
+    --main-green-color: var(--main-light-green-color);
+    --secondary-green-color: var(--secondary-light-green-color);
+    --third-green-color: var(--third-light-green-color);
     --main-background-color: var(--third-color);
     --section-width: 32vw;
     --vertical-padding: 24px;
     --horizontal-padding: 24px;
-    --main-error-color: #540804;
-    --secondary-error-color: #fe5f55;
+    --main-light-error-color: #540804;
+    --secondary-light-error-color: #fe5f55;
+    --main-dark-error-color: #540804;
+    --secondary-dark-error-color: #fe5f55;
+    --main-error-color: var(--main-light-error-color);
+    --secondary-error-color: var(--secondary-light-error-color);
     --border-radius: 10px;
 }
 
@@ -122,6 +133,10 @@ body * {
 
 ::-webkit-scrollbar-corner {
     background-color: transparent;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(.6) !important;
 }
 
 button:hover {
@@ -354,11 +369,12 @@ form button {
     top: 0;
     right: 0;
     transform: translate(110%, 0);
-    opacity: 0%;
+    opacity: 0;
     height: fit-content;
     width: 300px;
     background-color: var(--secondary-green-color);
-    border: 4px solid var(rgb(--main-green-color));
+    color: #8ECAE6 !important;
+    border: 4px solid rgb(var(--main-green-color));
 }
 
 #account-success-created-message>h2 {

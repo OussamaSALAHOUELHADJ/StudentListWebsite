@@ -35,7 +35,7 @@
 
 .account-info * {
 	padding: 0 12px 12px 0;
-	font-size: 1.4rem;
+	font-size: 1.3rem;
 	font-weight: 700;
 	font-family: var(--font-main);
 	color: var(--secondary-text-color);
@@ -81,16 +81,16 @@
 }
 
 .users-controle-icon {
-	height: 1rem;
+	height: .9rem;
 
 }
 
-.users-controle-icon:hover {
+td>.users-controle-icon:hover {
 	cursor: pointer;
 }
 
 .menu-text-action {
-	font-size: 1.3rem;
+	font-size: 1.2rem;
 	font-family: var(--font-main);
 	font-weight: 700;
 }
@@ -110,7 +110,7 @@
 	}
 
 	.menu-title {
-		font-size: 1.5rem;
+		font-size: 1.4rem;
 	}
 }
 
@@ -137,7 +137,7 @@
 	padding: 0;
 	margin: 0;
 	border-collapse: collapse;
-	font-size: .9rem;
+	font-size: .8rem;
 	min-width: 400px;
 	width: 100%;
 	max-width: max-content;
@@ -154,7 +154,7 @@
 	font-family: var(--font-main);
 	text-transform: capitalize;
 	text-align: left;
-	font-size: 1.1rem;
+	font-size: 1rem;
 }
 
 .content-table th,
@@ -167,9 +167,6 @@
 	display: grid;
 	justify-content: center;
 }
-
-
-
 
 .content-table tbody tr {
 	border-right: 3px solid rgb(var(--main-color));

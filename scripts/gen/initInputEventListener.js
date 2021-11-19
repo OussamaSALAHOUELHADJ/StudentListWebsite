@@ -12,6 +12,7 @@ function initInputEventListener(formObject, inputFieldsList) {
   for (const input of inputFieldsList) {
     let inputObj = formObject[input];
     inputObj.htmlElement.addEventListener("input", function () {
+      console.log(inputObj.value);
       inputObj.value = this.value;
       if (inputObj.errorMessageDisplayed) {
         formObject.checkInputValidity();

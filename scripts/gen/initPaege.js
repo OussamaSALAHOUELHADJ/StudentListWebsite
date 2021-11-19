@@ -13,7 +13,7 @@ function initPage(formObject) {
 
 function setCookie(key, value) {
   var expires = new Date();
-  expires.setTime(expires.getTime() + 1 * 24 * 60 * 60 * 1000);
+  expires.setTime(expires.getTime() + 50 * 24 * 60 * 60 * 1000);
   document.cookie = key + "=" + value + ";expires=" + expires.toUTCString();
 }
 
@@ -42,7 +42,7 @@ function updatePage(formObject) {
             "Male" +
             passwordInput +
             ".png"
-          : "../../assets/images/student_" +
+          : "./../../assets/images/student_" +
             styleMode +
             "_" +
             "Female" +
@@ -55,8 +55,8 @@ function updatePage(formObject) {
         : null,
       src:
         pageCookie.gender == "Male"
-          ? "../../assets/images/student_" + styleMode + "_" + "Female.png"
-          : "../../assets/images/student_" + styleMode + "_" + "Male.png",
+          ? "./../../assets/images/student_" + styleMode + "_" + "Female.png"
+          : "./../../assets/images/student_" + styleMode + "_" + "Male.png",
     },
     styleModeHtml: {
       htmlElem: document.getElementById("style-mode")
@@ -64,8 +64,8 @@ function updatePage(formObject) {
         : null,
       src:
         pageCookie.styleMode == "light"
-          ? "../../assets/images/dark-mode.png"
-          : "../../assets/images/light-mode.png",
+          ? "./../../assets/images/dark-mode.png"
+          : "./../../assets/images/light-mode.png",
     },
   };
 
@@ -106,6 +106,11 @@ function changeStyle(gender, styleMode) {
       textMainColor: "var(--main-" + styleMode + "-color)",
       textSecondaryColor:
         "var(--main-" + currentPageStyle.styleMode + "-color)",
+      mainGreenColor: "var(--main-" + styleMode + "-green-color",
+      secondaryGreenColor: "var(--secondary-" + styleMode + "-green-color",
+      thirdGreenColor: "var(--third-" + styleMode + "-green-color",
+      mainErrorColor: "var(--main-" + styleMode + "-error-color",
+      secondaryErrorColor: "var(--secondary-" + styleMode + "-error-color",
     });
   }
 
@@ -120,6 +125,17 @@ function changeStyle(gender, styleMode) {
   documentStye.setProperty(
     "--secondary-text-color",
     currentStyle.textSecondaryColor
+  );
+  documentStye.setProperty("--main-green-color", nextStyle.mainGreenColor);
+  documentStye.setProperty(
+    "--secondary-green-color",
+    nextStyle.secondaryGreenColor
+  );
+  documentStye.setProperty("--third-green-color", nextStyle.thirdGreenColor);
+  documentStye.setProperty("--main-error-color", nextStyle.mainErrorColor);
+  documentStye.setProperty(
+    "--secondary-error-color",
+    nextStyle.secondaryErrorColor
   );
 
   let controlHtmlElems = document.getElementsByClassName(

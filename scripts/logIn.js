@@ -15,20 +15,20 @@ let logInForm = {
     value: "",
     validationRegex: /\b[a-z1-9]{4,15}\b$/i,
     errorMessageDisplayed: false,
-    errorMessage: "invalid username, must be between 4-15 letters",
+    errorMessage: "invalid username, must be between 4-15 character",
     validateValue: function () {
-      return this.validationRegex.test(this.value);
+      return this.validationRegex.test(this.value.trim());
     },
   },
   password: {
     name: "password",
     htmlElement: logInHtmlElem["password"],
     value: "",
-    validationRegex: /\b.{8,20}\b$/,
+    validationRegex: /\b.{8,50}\b$/,
     errorMessageDisplayed: false,
-    errorMessage: "invalid password, must be between 8-20 letters",
+    errorMessage: "invalid password, must be between 8-50 character",
     validateValue: function () {
-      return this.validationRegex.test(this.value);
+      return this.validationRegex.test(this.value.trim());
     },
   },
   gender: {
@@ -39,6 +39,8 @@ let logInForm = {
     let areElementsValid = true;
     for (const element of elementsToCheckValue) {
       let formElement = this[element];
+      formElement.value = formElement.value.trim();
+      formElement.htmlElement.value = formElement.value;
       let isValid = formElement.validateValue();
       let isErrorMessageDisplayed = formElement.errorMessageDisplayed;
 
