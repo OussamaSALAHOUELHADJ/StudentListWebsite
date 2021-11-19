@@ -5,10 +5,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css">
     <title>Creer Compte</title>
 </head>
 
 <body>
+    <section id="register-form-container">
+        <img id="form-profile-image" src="" alt="student">
+        <h1>Register</h1>
+        <form name="register-form" id="register-form" action="./accueil.html" onsubmit="registerForm.onSubmit()"
+            method="get">
+            <label for="first-name" class="form-label" id="first-name">First Name:</label>
+            <input type="text" name="first-name" placeholder="first name">
+
+            <label for="last-name" class="form-label">Last Name:</label>
+            <input type="text" name="last-name" placeholder="last name">
+
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender" title="gender">
+            </select>
+
+            <label for="birthday" class="form-label">Birthday:</label>
+            <input type="date" name="birthday" placeholder="birthday">
+
+            <label for="adress" class="form-label">Address:</label>
+            <input type="text" name="adress" placeholder="house number, street, city">
+
+            <label for="wilaya">Wilaya:</label>
+            <select name="wilaya" id="wilaya" title="wilaya"></select>
+
+            <label for="email" class="form-label">Email Address:</label>
+            <input type="email" name="email" placeholder="name@company.com">
+
+            <label for="phone" class="form-label">Phone Number:</label>
+            <input type="tel" min="10" max="10" name="phone" placeholder="079-865-1242">
+
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" min="4" max="20" name="username" placeholder="username">
+
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" min="8" max="50" name="password" placeholder="password">
+
+            <button type="button" onclick=" window.commonFunctions.submitButtonClicked(registerForm)">Register</button>
+        </form>
+        <p>You already have an account? <a href="../index.html"><strong style="font-weight: 700;">Log In</strong></a>
+        </p>
+    </section>
+    <section id="account-success-created-message">
+    </section>
+    <section id="control-icons" style="grid-auto-flow: dense">
+        <div id="style-mode">
+            <img src="" class="control-image" alt="change gender style" onclick="updateStyleMode(registerForm)">
+            <div class="hover-circle-showoff"></div>
+        </div>
+    </section>
+    <script type="text/javascript" src="../scripts/gen/initPage.js"></script>
+    <script type="text/javascript" src="../scripts/gen/initInputEventListener.js"></script>
+    <script type="text/javascript" src="../scripts/gen/submitButtonClicked.js"></script>
+    <script type="text/javascript" src="../scripts/gen/pageControl.js"></script>
+    <script type="text/javascript" src="../scripts/register.js"></script>
+
 
 </body>
 

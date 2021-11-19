@@ -4,11 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../favicon.ico" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Gestion des absences</title>
 </head>
 
 <body>
+    <section id="login-form-container">
+        <img id="form-profile-image" src="" alt="student">
+        <h1 class="form-title">Log In</h1>
+        <form name="login-form" action="./pages/accueil.html" onsubmit="return loginForm.onSubmit()" method="get">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" min="4" max="20" name="username" placeholder="username">
 
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" min="8" max="20" name="password" placeholder="password">
+
+            <button type="button" onclick="window.commonFunctions.submitButtonClicked(logInForm)">LOGIN</button>
+        </form>
+        <p>You don't have an account? <a href="./pages/creerCompte.html"><strong
+                    style="font-weight: 700;">Register</strong></a></p>
+    </section>
+
+    <section id="control-icons">
+        <div id="change-gender-style">
+            <img src="" alt="change gender style" onclick="updateGenderStyle(logInForm)">
+            <div class="hover-circle-showoff"></div>
+        </div>
+        <div id="style-mode">
+            <img src="" class="control-image" alt="change gender style" onclick="updateStyleMode(logInForm)">
+            <div class="hover-circle-showoff"></div>
+        </div>
+    </section>
+    <script type="text/javascript" src="/scripts/gen/initPage.js"></script>
+    <script type="text/javascript" src="/scripts/gen/pageControl.js"></script>
+    <script type="text/javascript" src="/scripts/gen/initInputEventListener.js"></script>
+    <script type="text/javascript" src="/scripts/gen/submitButtonClicked.js"></script>
+    <script type="text/javascript" src="/scripts/logIn.js"></script>
 </body>
 
 </html>
