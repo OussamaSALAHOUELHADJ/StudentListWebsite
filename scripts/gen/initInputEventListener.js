@@ -3,8 +3,10 @@ function initInputEventListener(formObject, inputFieldsList) {
     document.forms[formObject.name].addEventListener(
       "keypress",
       function (event) {
-        if (event.key == "Enter") {
+        if (event.key == "Enter" && formObject.name != "add-edit-form") {
           window.commonFunctions.submitButtonClicked(formObject);
+        } else if (event.key == "Enter" && formObject.name == "add-edit-form") {
+          window.commonFunctions.check_and_add_edit(formObject);
         }
       }
     );
@@ -12,14 +14,13 @@ function initInputEventListener(formObject, inputFieldsList) {
   for (const input of inputFieldsList) {
     let inputObj = formObject[input];
     inputObj.htmlElement.addEventListener("input", function () {
-      console.log(inputObj.value);
       inputObj.value = this.value;
       if (inputObj.errorMessageDisplayed) {
         formObject.checkInputValidity();
       }
     });
 
-    if (input == "password") {
+    if (input == "password" && formObject.name != "add-edit-form") {
       inputObj.htmlElement.addEventListener("input", function () {
         let profileImg = document.getElementById("form-profile-image");
         if (inputObj.value == "") {
@@ -40,7 +41,7 @@ function initInputEventListener(formObject, inputFieldsList) {
       });
     }
 
-    if (input == "gender") {
+    if (input == "gender" && formObject.name == "register-form") {
       inputObj.htmlElement.addEventListener("input", function () {
         let profileImg = document.getElementById("form-profile-image");
 

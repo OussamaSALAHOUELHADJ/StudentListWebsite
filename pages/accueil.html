@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../favicon.ico" />
     <link rel="stylesheet" href="../css/style.css" />
 
     <title>Accueil</title>
@@ -14,11 +15,15 @@
     <section id="accueil-forground">
         <nav class="top-navbar">
             <div class="account-info">
-                <p>Welcome Back <span class="user-info"></span></p>
+                <p>Welcome <span class="user-info"></span></p>
             </div>
         </nav>
         <nav class="side-navbar" id="menu">
             <h2 class="menu-title">Menu</h2>
+            <button class="btn" type="button" onclick="show_users_list()">
+                <img src="../assets/images/show-list.png" alt="Add a user">
+                <div class="menu-text-action">Show users List</div>
+            </button>
             <button class="btn" type="button" onclick="show_add()">
                 <img src="../assets/images/add-icon.png" alt="Add a user">
                 <div class="menu-text-action">Add a user</div>
@@ -58,65 +63,63 @@
         <section id="add-edit-section">
             <div>
                 <section id="add-edit-form-container">
-                    <img id="form-profile-image" src="" alt="student">
                     <h1 id="add/edit">Add user</h1>
-                    <form name="register-form" id="register-form" onsubmit="registerForm.onSubmit()" method="get">
+                    <form name="add-edit-form" id="add-edit-form" onsubmit="addEditForm.onSubmit()" method="get">
 
                         <label for="first-name" class="form-label" id="first-name">First Name:</label>
-                        <input type="text" min="1" max="15" name="first-name" placeholder="first name">
+                        <input type="text" name="first-name" placeholder="first name">
 
                         <label for="last-name" class="form-label">Last Name:</label>
-                        <input type="text" min="1" max="15" name="last-name" placeholder="last name">
+                        <input type="text" name="last-name" placeholder="last name">
 
                         <label for="gender">Gender:</label>
                         <select name="gender" id="gender" title="gender">
                         </select>
 
                         <label for="birthday" class="form-label">Birthday:</label>
-                        <input type="date" min="4" max="20" name="birthday" placeholder="birthday">
+                        <input type="date" name="birthday" placeholder="birthday">
 
-                        <label for="adress" class="form-label">Adress:</label>
-                        <input type="text" min="4" max="20" name="adress" placeholder="house number, street, city">
+                        <label for="adress" class="form-label">Address:</label>
+                        <input type="text" name="adress" placeholder="house number, street, city">
 
                         <label for="wilaya">Wilaya:</label>
                         <select name="wilaya" id="wilaya" title="wilaya"></select>
 
-                        <label for="email" class="form-label">Email Adress:</label>
-                        <input type="email" min="4" max="20" name="email" placeholder="name@company.com">
+                        <label for="email" class="form-label">Email Address:</label>
+                        <input type="email" name="email" placeholder="name@company.com">
 
                         <label for="phone" class="form-label">Phone Number:</label>
-                        <input type="tel" min="4" max="20" name="phone" placeholder="+213797536314">
+                        <input type="tel" min="10" max="10" name="phone" placeholder="079-865-1242">
 
                         <label for="username" class="form-label">Username:</label>
                         <input type="text" min="4" max="20" name="username" placeholder="username">
 
                         <label for="password" class="form-label">Password:</label>
-                        <input type="password" min="8" max="20" name="password" placeholder="password">
+                        <input type="password" min="8" max="50" name="password" placeholder="password">
 
                         <button type="button" id="add/edit_btn"
-                            onclick="window.commonFunctions.check_and_add_edit(registerForm,'add')">Add</button>
+                            onclick="window.commonFunctions.check_and_add_edit(addEditForm,'add')">Add</button>
                         <button type="button" id="/edit_btn"
-                            onclick="window.commonFunctions.check_and_add_edit(registerForm,'edit')">Edit</button>
+                            onclick="window.commonFunctions.check_and_add_edit(addEditForm,'edit')">Edit</button>
                         <button type="button" id="cancel" onclick="cancel_form()">Cancel</button>
                     </form>
-                </section>
-                <section id="account-success-created-message">
                 </section>
             </div>
         </section>
     </section>
 
+    <section id="account-success-created-message">
+    </section>
 
     <section id="control-icons">
         <div id="style-mode">
-            <img src="" class="control-image" alt="change gender style" onclick="updateStyleMode(registerForm)">
+            <img src="" class="control-image" alt="change gender style" onclick="updateStyleMode(addEditForm)">
             <div class="hover-circle-showoff"></div>
         </div>
     </section>
-    <script type="text/javascript" src="../scripts/register.js"></script>
+    <script type="text/javascript" src="../scripts/gen/initPage.js"></script>
     <script type="text/javascript" src="../scripts/gen/initInputEventListener.js"></script>
-    <script type="text/javascript" src="../scripts/gen/submitButtonClicked.js"></script>
-    <script type="text/javascript" src="../scripts/gen/initPaege.js"></script>
+    <script type="text/javascript" src="../scripts/gen/check_and_add_edit.js"></script>
     <script type="text/javascript" src="../scripts/gen/pageControl.js"></script>
     <script type="text/javascript" src="../scripts/accueil.js"></script>
 </body>

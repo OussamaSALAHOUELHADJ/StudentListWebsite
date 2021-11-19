@@ -13,7 +13,7 @@ let logInForm = {
     name: "username",
     htmlElement: logInHtmlElem["username"],
     value: "",
-    validationRegex: /\b[a-z1-9]{4,15}\b$/i,
+    validationRegex: /^((?!\s).)[a-z1-9]{4,15}$/i,
     errorMessageDisplayed: false,
     errorMessage: "invalid username, must be between 4-15 character",
     validateValue: function () {
@@ -24,9 +24,9 @@ let logInForm = {
     name: "password",
     htmlElement: logInHtmlElem["password"],
     value: "",
-    validationRegex: /\b.{8,50}\b$/,
+    validationRegex: /\b.{6,50}\b$/,
     errorMessageDisplayed: false,
-    errorMessage: "invalid password, must be between 8-50 character",
+    errorMessage: "invalid password, must be between 6-50 character",
     validateValue: function () {
       return this.validationRegex.test(this.value.trim());
     },

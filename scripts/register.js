@@ -61,9 +61,9 @@ let registerForm = {
     name: "First Name",
     htmlElement: registerHtmlElem["first-name"],
     value: "",
-    validationRegex: /\b[a-z]{1,15}\b$/i,
+    validationRegex: /^((?!\s).)[a-z]{1,20}$/i,
     errorMessageDisplayed: false,
-    errorMessage: "invalid first name, must be between 1-15 letters only.",
+    errorMessage: "invalid first name, must be between 1-20 letters only.",
     validateValue: function () {
       return this.validationRegex.test(this.value);
     },
@@ -72,9 +72,9 @@ let registerForm = {
     name: "Last Name",
     htmlElement: registerHtmlElem["last-name"],
     value: "",
-    validationRegex: /\b[a-z]{1,15}\b$/i,
+    validationRegex: /^((?!\s).)[a-z]{1,20}$/i,
     errorMessageDisplayed: false,
-    errorMessage: "invalid last name, must be between 1-15 letters only.",
+    errorMessage: "invalid last name, must be between 1-20 letters only.",
     validateValue: function () {
       return this.validationRegex.test(this.value);
     },
@@ -127,9 +127,9 @@ let registerForm = {
     name: "email",
     htmlElement: registerHtmlElem["email"],
     value: "",
-    validationRegex: /\b\w+@\w+\.[a-z0-9]+\b$/i,
+    validationRegex: /\b^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w+)+\b$/i,
     errorMessageDisplayed: false,
-    errorMessage: "invalid email",
+    errorMessage: "invalid email, expected like name@company.dz.com",
     validateValue: function () {
       return this.validationRegex.test(this.value);
     },
@@ -138,9 +138,10 @@ let registerForm = {
     name: "Phone Number",
     htmlElement: registerHtmlElem["phone"],
     value: "",
-    validationRegex: /\b\d{3}-?\d{3}-?\d{4}\b$/,
+    validationRegex: /\b\d{3}-?\d{3}-?\d{4}\b$|\b\d{3}\s?\d{3}\s?\d{4}\b$/,
     errorMessageDisplayed: false,
-    errorMessage: "invalid phone number, must have 10 digits only.",
+    errorMessage:
+      "invalid phone number, must have 10 digits only, expected: 0798651242 or 079-865-1242 or 079 865 1242",
     validateValue: function () {
       return this.validationRegex.test(this.value);
     },
@@ -149,7 +150,7 @@ let registerForm = {
     name: "username",
     htmlElement: registerHtmlElem["username"],
     value: "",
-    validationRegex: /\b[a-z1-9]{4,15}\b$/i,
+    validationRegex: /^((?!\s).)[a-z1-9]{4,15}$/i,
     errorMessageDisplayed: false,
     errorMessage: "invalid username, must be between 4-15 character",
     validateValue: function () {
@@ -160,9 +161,9 @@ let registerForm = {
     name: "password",
     htmlElement: registerHtmlElem["password"],
     value: "",
-    validationRegex: /\b.{8,50}\b$/,
+    validationRegex: /\b.{6,50}\b$/,
     errorMessageDisplayed: false,
-    errorMessage: "invalid password, must be between 8-50 character",
+    errorMessage: "invalid password, must be between 6-50 character",
     validateValue: function () {
       return this.validationRegex.test(this.value);
     },

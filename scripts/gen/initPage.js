@@ -25,8 +25,6 @@ function getCookie(key) {
 function updatePage(formObject) {
   let gender = window.pageCookie.gender;
   let styleMode = window.pageCookie.styleMode;
-  console.log(window.pageCookie);
-  console.log(formObject.password.value);
   let passwordInput = formObject.password.value == "" ? "" : "_ce";
 
   let pageObjects = {

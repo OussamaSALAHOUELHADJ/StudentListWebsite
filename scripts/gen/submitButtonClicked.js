@@ -10,11 +10,11 @@
           );
           successMessageHtmlChildren(
             successMessageHtml,
-            "Account has been created with Success!",
+            "Account has been created with Success!🎉",
             "Congrats! your account has been created, you'll be forwarded to the home page..."
           );
           successMessageHtml.classList.add("active-success-message");
-          await sleep(12000);
+          await sleep(7000);
         }
         formObj.htmlElement.submit();
       } else {
@@ -29,6 +29,9 @@ function sleep(lf_ms) {
 }
 
 function successMessageHtmlChildren(parent, title, message) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
   let messageTitle = document.createElement("h2");
   messageTitle.textContent = title;
 
